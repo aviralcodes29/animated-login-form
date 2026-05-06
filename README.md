@@ -141,10 +141,12 @@ You can later add screenshots like:
 ## Screenshots
 
 ### Desktop
-(screenshot/Desktop-view)
+
+![Animated login form on desktop](screenshot/desktop.png)
 
 ### Mobile
-(Insert screenshot here)
+
+![Animated login form on mobile](screenshot/mobile.png)
 ```
 
 Use VS Code, run Live Server, and capture images using Snipping Tool, then upload to your GitHub repo (or use image URLs). [web:64]
