@@ -141,7 +141,7 @@ You can later add screenshots like:
 ## Screenshots
 
 ### Desktop
-(Insert screenshot here)
+(screenshot/Desktop-view)
 
 ### Mobile
 (Insert screenshot here)
