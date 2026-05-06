@@ -18,50 +18,42 @@ document.addEventListener("DOMContentLoaded", () => {
     // Handle submit with basic validation
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        let isValid = true;
-
         clearErrors();
 
-        // Email
+        let valid = true;
         const emailVal = emailInput.value.trim();
-        const emailErrEl = emailInput.closest(".field").querySelector(".error-msg");
+        const passVal = passwordInput.value.trim();
+        const emailErr = getErrorElement(emailInput);
+        const passErr = getErrorElement(passwordInput);
+
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailVal) {
-            showError(emailInput, emailErrEl, "Email is required");
-            isValid = false;
+            showError(emailInput, emailErr, "Email is required");
+            valid = false;
         } else if (!emailPattern.test(emailVal)) {
-            showError(emailInput, emailErrEl, "Enter a valid email address");
-            isValid = false;
+            showError(emailInput, emailErr, "Enter a valid email address");
+            valid = false;
         }
-
-        // Password
-        const passVal = passwordInput.value.trim();
-        const passErrEl = passwordInput.closest(".field").querySelector(".error-msg");
 
         if (!passVal) {
-            showError(passwordInput, passErrEl, "Password is required");
-            isValid = false;
+            showError(passwordInput, passErr, "Password is required");
+            valid = false;
         } else if (passVal.length < 6) {
-            showError(passwordInput, passErrEl, "At least 6 characters required");
-            isValid = false;
+            showError(passwordInput, passErr, "At least 6 characters required");
+            valid = false;
         }
 
-        if (!isValid) return;
+        if (!valid) return;
 
-        // Small success feedback
-        form.classList.add("form-success");
-        setTimeout(() => {
-            alert("Login successful (demo only)");
-            form.classList.remove("form-success");
-            form.reset();
-        }, 280);
+        alert("Login successful (demo only)");
+        form.reset();
     });
 
     // Clear error on typing
     fields.forEach((input) => {
         input.addEventListener("input", () => {
-            const errorEl = input.closest(".field").querySelector(".error-msg");
+            const errorEl = getErrorElement(input);
             if (errorEl.textContent) {
                 errorEl.textContent = "";
                 errorEl.classList.remove("show");
@@ -70,6 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    /* Helpers */
+    function getErrorElement(inputEl) {
+        return inputEl.closest(".field").querySelector(".error-msg");
+    }
+
     function showError(inputEl, errorEl, message) {
         errorEl.textContent = message;
         errorEl.classList.add("show");
@@ -77,12 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function clearErrors() {
-        document.querySelectorAll(".error-msg").forEach((el) => {
+        document.querySelectorAll(".error-msg").forEach(el => {
             el.textContent = "";
             el.classList.remove("show");
         });
 
-        document.querySelectorAll(".field-inner").forEach((el) => {
+        document.querySelectorAll(".field-inner").forEach(el => {
             el.style.borderColor = "";
         });
     }
