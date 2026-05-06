@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Form</title>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Soft animated background shapes -->
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+
+    <main class="wrapper">
+        <section class="login-card">
+            <header class="login-header">
+                <h1>Welcome back</h1>
+                <p>Sign in to continue your journey</p>
+            </header>
+
+            <form id="loginForm" novalidate>
+                <!-- Email -->
+                <div class="field">
+                    <label for="email">Email</label>
+                    <div class="field-inner">
+                        <span class="field-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            required
+                        />
+                    </div>
+                    <small class="error-msg"></small>
+                </div>
+
+                <!-- Password -->
+                <div class="field">
+                    <label for="password">Password</label>
+                    <div class="field-inner">
+                        <span class="field-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="••••••••"
+                            required
+                            minlength="6"
+                        />
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            aria-label="Toggle password visibility"
+                        >
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <small class="error-msg"></small>
+                </div>
+
+                <!-- Remember + Forgot -->
+                <div class="row-between">
+                    <label class="remember">
+                        <input type="checkbox" id="remember" />
+                        <span class="custom-checkbox"></span>
+                        <span>Remember me</span>
+                    </label>
+
+                    <a href="#" class="link-small">Forgot password?</a>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-primary">
+                    <span>Sign in</span>
+                </button>
+
+                <!-- Social -->
+                <p class="divider">
+                    <span>or continue with</span>
+                </p>
+
+                <div class="social-row">
+                    <button type="button" class="social-btn" aria-label="Continue with Google">
+                        <i class="fa-brands fa-google"></i>
+                    </button>
+                    <button type="button" class="social-btn" aria-label="Continue with GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </button>
+                    <button type="button" class="social-btn" aria-label="Continue with Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </button>
+                </div>
+
+                <p class="hint">
+                    Demo UI only – no real login happens here.
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
