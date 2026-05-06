@@ -133,22 +133,6 @@ These improvements can turn this simple UI into a more production-ready authenti
 
 ---
 
-## 📸 Screenshots (Optional)
-
-You can later add screenshots like:
-
-```md
-## Screenshots
-
-### Desktop
-
-![Animated login form on desktop](screenshot/desktop.png)
-
-### Mobile
-
-![Animated login form on mobile](screenshot/mobile.png)
-```
-
 Use VS Code, run Live Server, and capture images using Snipping Tool, then upload to your GitHub repo (or use image URLs). [web:64]
 
 ---
